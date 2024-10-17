@@ -4,7 +4,6 @@ from embedding_generation import embedding_model
 
 # Initialize the Cohere client
 cohere_api_key = os.getenv('COHERE_API_KEY')
-# Initialize Cohere client
 cohere_client = cohere.Client(cohere_api_key)
 
 def handle_query(query, pinecone_index, top_k=3):
@@ -19,6 +18,7 @@ def handle_query(query, pinecone_index, top_k=3):
     Returns:
     tuple: Generated answer and the retrieved document segments.
     """
+    # Encoding the query to aompare with the document segments stored in the index
     query_embedding = embedding_model.encode(query).tolist()
 
     # Query Pinecone to retrieve relevant document segments

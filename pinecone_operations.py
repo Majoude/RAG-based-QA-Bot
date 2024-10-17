@@ -14,8 +14,6 @@ def connect_to_pinecone_index(index_name, dimension=384):
     Returns:
     Index: The connected Pinecone index.
     """
-    
-    # pc.delete_index(index_name)
 
     if index_name not in pc.list_indexes().names():
         pc.create_index(
@@ -40,9 +38,12 @@ def store_embeddings_in_pinecone(index, sentences, embeddings):
     sentences (list): List of sentences.
     embeddings (list): List of corresponding embeddings.
     """
+
+    # Deleting any previous data in the namespace from past documents
     if "namespace" in index.describe_index_stats()['namespaces']:
         index.delete(delete_all=True, namespace="namespace")
 
+    # Forming the vector that will be upserted to the index with the metadata being the original text from the document
     vectors = [{"id": f"doc_{i}", "values": embeddings[i], "metadata": {"text": sentences[i]}} for i in range(len(embeddings))]
 
 

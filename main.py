@@ -37,7 +37,7 @@ if pdf_file and not st.session_state.processed_pdf:
         store_embeddings_in_pinecone(pinecone_index, sentences, embeddings)
         st.success("Embeddings stored successfully!")
 
-        # Store the sentences and embeddings in session state
+    # Store the sentences and embeddings in session state
     st.session_state.sentences = sentences
     st.session_state.embeddings = embeddings
     st.session_state.processed_pdf = True  # Mark that PDF has been processed
