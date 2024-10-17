@@ -7,7 +7,7 @@ from query_handling import handle_query
 # Streamlit UI
 st.title("RAG-based QA Bot")
 
-# Connect to Pinecone index
+# Connect to Pinecone index. The index is fixed becuase the free plan supports only limited indexes.
 pinecone_index = connect_to_pinecone_index('qa-bot-index')
 
 # Initialize session state to store processed data
