@@ -15,7 +15,6 @@ This repository contains the code for a Retrieval-Augmented Generation (RAG) bas
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [License](#license)
 
 ---
 
@@ -48,12 +47,12 @@ pip install -r requirements.txt
 ### APIs Setup
 
 1. **Create a Pinecone account**: If you don't have one already, sign up at [Pinecone.io](https://www.pinecone.io/).
-2. **Create a Cohere account**: You need to sign up at [Cohere](https://cohere.com/)
+2. **Create a Cohere account**: You also need to sign up at [Cohere](https://cohere.com/).
 3. **Configure API Keys**: Ensure you have your API keys ready to use.
 
 ### Environment Variables
 
-You can store your API keys (like Pinecone) in a `.env` file or directly in your environment. The `.env` file should include:
+You can store your API keys in a `.env` file or directly in your environment. The `.env` file should include:
 
 ```bash
 PINECONE_API_KEY=your_pinecone_api_key
@@ -115,12 +114,6 @@ RAG-based-QA-Bot/
 - **`pinecone_operations.py`**: Manages the connection and storage of embeddings in Pinecone.
 - **`query_handling.py`**: Handles user queries by retrieving relevant sections from Pinecone and generating an answer.
 - **`requirements.txt`**: A list of Python libraries required to run the project.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
