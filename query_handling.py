@@ -18,7 +18,7 @@ def handle_query(query, pinecone_index, top_k=3):
     Returns:
     tuple: Generated answer and the retrieved document segments.
     """
-    # Encoding the query to aompare with the document segments stored in the index
+    # Encoding the query to compare with the document segments stored in the index
     query_embedding = embedding_model.encode(query).tolist()
 
     # Query Pinecone to retrieve relevant document segments
